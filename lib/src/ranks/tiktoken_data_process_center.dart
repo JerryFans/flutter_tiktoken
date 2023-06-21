@@ -30,7 +30,6 @@ class TiktokenDataProcessCenter {
   }
 
   Future<void> initCl100kBaseData({bool ignorePackageName = false}) async {
-    String currentFilePath = Platform.script.toFilePath();
     var prefix = 'packages/flutter_tiktoken/';
     if (ignorePackageName == true) {
       prefix = '';

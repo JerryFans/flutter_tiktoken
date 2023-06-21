@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_tiktoken/src/error/tiktoken_error.dart';
-import 'package:flutter_tiktoken/src/ranks/tiktoken_data_process_center.dart';
 import 'package:flutter_tiktoken/flutter_tiktoken.dart';
 
 void main() async {
@@ -65,7 +64,7 @@ void main() async {
       expect(
         enc.encode(
           "hello <|endoftext|>",
-          allowedSpecial: SpecialTokensSet.all(),
+          allowedSpecial: const SpecialTokensSet.all(),
         ),
         orderedEquals(Uint32List.fromList([31373, 220, 50256])),
       );
@@ -94,7 +93,7 @@ void main() async {
       expect(
         enc.encode(
           "hello <|endoftext|>",
-          allowedSpecial: SpecialTokensSet.all(),
+          allowedSpecial: const SpecialTokensSet.all(),
         ),
         orderedEquals(Uint32List.fromList([15339, 220, 100257])),
       );
@@ -118,7 +117,7 @@ void main() async {
     expect(
         custom.encode(
           "<|im_start|>test<|im_end|>",
-          allowedSpecial: SpecialTokensSet.all(),
+          allowedSpecial: const SpecialTokensSet.all(),
         ),
         orderedEquals(Uint32List.fromList([100264, 9288, 100265])));
   });
@@ -147,7 +146,7 @@ void main() async {
     );
 
     expect(
-      enc.encode("<|endoftext|>", allowedSpecial: SpecialTokensSet.all()),
+      enc.encode("<|endoftext|>", allowedSpecial: const SpecialTokensSet.all()),
       orderedEquals(Uint32List.fromList([50256])),
     );
 
