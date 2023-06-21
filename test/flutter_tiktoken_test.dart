@@ -158,8 +158,8 @@ void main() async {
     expect(
       enc.encode(
         "<|endoftext|>",
-        allowedSpecial: SpecialTokensSet.empty(),
-        disallowedSpecial: SpecialTokensSet.empty(),
+        allowedSpecial: const SpecialTokensSet.empty(),
+        disallowedSpecial: const SpecialTokensSet.empty(),
       ),
       orderedEquals(Uint32List.fromList([27, 91, 437, 1659, 5239, 91, 29])),
     );

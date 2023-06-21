@@ -305,7 +305,7 @@ bool isWhitespace(String? c) => c != null && _whitespaces.contains(c);
 
 /// UTF-8 decode a single Unicode scalar value from the end of a slice.
 Tuple2<String?, int> decodeLastUtf8(List<int> slice) {
-  if (slice.isEmpty) return Tuple2(null, 0);
+  if (slice.isEmpty) return const Tuple2(null, 0);
 
   int i = slice.length - 1;
   while (i >= 0 && (slice[i] & 0xC0) == 0x80) {

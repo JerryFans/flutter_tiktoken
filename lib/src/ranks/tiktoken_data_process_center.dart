@@ -19,14 +19,14 @@ class TiktokenDataProcessCenter {
 
   Future<void> initata({bool ignorePackageName = false}) async {
     var milliseconds = DateTime.now().millisecondsSinceEpoch;
-    print("begin decode tiktoken data time : ${DateTime.now()}");
+    debugPrint("begin decode tiktoken data time : ${DateTime.now()}");
     await initCl100kBaseData(ignorePackageName: ignorePackageName);
     await initGpt2Data(ignorePackageName: ignorePackageName);
     await initP50kBaseData(ignorePackageName: ignorePackageName);
     await initR50kBaseData(ignorePackageName: ignorePackageName);
-    print("end decode tiktoken data time : ${DateTime.now()}");
+    debugPrint("end decode tiktoken data time : ${DateTime.now()}");
     var decodeMilliseconds = DateTime.now().millisecondsSinceEpoch - milliseconds;
-    print("decode tiktoken all json time use: ${decodeMilliseconds/1000} seconds");
+    debugPrint("decode tiktoken all json time use: ${decodeMilliseconds/1000} seconds");
   }
 
   Future<void> initCl100kBaseData({bool ignorePackageName = false}) async {
