@@ -1,15 +1,6 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## flutter_tiktoken
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+flutter_tiktoken is a flutter offline package for a fast BPE tokeniser for OpenAI models.
 
 flutter_tiktoken is a copy package in [https://github.com/mvitlov/tiktoken](https://github.com/mvitlov/tiktoken) and fixed the [issue](https://github.com/mvitlov/tiktoken/issues/5) build spent many time (more than one hour) when build in release mode.
 
