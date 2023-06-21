@@ -1,5 +1,5 @@
 name: flutter_tiktoken
-description: A new Flutter package project.
+description: A flutter offline package for a fast BPE tokeniser for OpenAI models.
 version: 0.0.1
 homepage: https://github.com/JerryFans/flutter_tiktoken
 
