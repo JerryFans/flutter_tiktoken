@@ -8,14 +8,14 @@ import 'package:flutter_tiktoken/flutter_tiktoken.dart';
 import 'index.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   print("begin decode data time : ${DateTime.now()}");
-  await TiktokenDataProcessCenter().initata();
+  await TiktokenDataProcessCenter().initData();
   print("end decode data time : ${DateTime.now()}");
   print("cl100kBase count: ${cl100kBase.keys.length}");
-  print("cl100kBase count: ${TiktokenDataProcessCenter().cl100kBase.keys.length}");
+  print(
+      "cl100kBase count: ${TiktokenDataProcessCenter().cl100kBase.keys.length}");
 
   return;
   test("encodingForModel", () {

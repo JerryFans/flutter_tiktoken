@@ -14,7 +14,7 @@ init flutter_tiktoken
 ```dart
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await TiktokenDataProcessCenter().initata();
+  await TiktokenDataProcessCenter().initData();
   runApp(const MyApp());
 }
 ```
