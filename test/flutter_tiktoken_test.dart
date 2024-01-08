@@ -6,10 +6,9 @@ import 'package:flutter_tiktoken/src/error/tiktoken_error.dart';
 import 'package:flutter_tiktoken/flutter_tiktoken.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
-  await TiktokenDataProcessCenter().initata(ignorePackageName: true);
+  await TiktokenDataProcessCenter().initData(ignorePackageName: true);
 
   test("encodingForModel", () {
     expect(() => encodingForModel("gpt2"), returnsNormally);

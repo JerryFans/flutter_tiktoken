@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class TiktokenDataProcessCenter {
-  static final TiktokenDataProcessCenter _singleton = TiktokenDataProcessCenter._internal();
+  static final TiktokenDataProcessCenter _singleton =
+      TiktokenDataProcessCenter._internal();
 
   Map<String, int> cl100kBase = {};
   Map<String, int> gpt2 = {};
@@ -16,7 +17,7 @@ class TiktokenDataProcessCenter {
 
   TiktokenDataProcessCenter._internal();
 
-  Future<void> initata({bool ignorePackageName = false}) async {
+  Future<void> initData({bool ignorePackageName = false}) async {
     var milliseconds = DateTime.now().millisecondsSinceEpoch;
     debugPrint("begin decode tiktoken data time : ${DateTime.now()}");
     await initCl100kBaseData(ignorePackageName: ignorePackageName);
@@ -24,8 +25,10 @@ class TiktokenDataProcessCenter {
     await initP50kBaseData(ignorePackageName: ignorePackageName);
     await initR50kBaseData(ignorePackageName: ignorePackageName);
     debugPrint("end decode tiktoken data time : ${DateTime.now()}");
-    var decodeMilliseconds = DateTime.now().millisecondsSinceEpoch - milliseconds;
-    debugPrint("decode tiktoken all json time use: ${decodeMilliseconds/1000} seconds");
+    var decodeMilliseconds =
+        DateTime.now().millisecondsSinceEpoch - milliseconds;
+    debugPrint(
+        "decode tiktoken all json time use: ${decodeMilliseconds / 1000} seconds");
   }
 
   Future<void> initCl100kBaseData({bool ignorePackageName = false}) async {
@@ -34,8 +37,8 @@ class TiktokenDataProcessCenter {
       prefix = '';
     }
     for (int i = 1; i <= 11; i++) {
-      String jsonString =
-          await rootBundle.loadString('${prefix}lib/tokens/cl100k_base/cl100k_base_$i.json');
+      String jsonString = await rootBundle
+          .loadString('${prefix}lib/tokens/cl100k_base/cl100k_base_$i.json');
       Map<String, dynamic> jsonData = json.decode(jsonString);
       Map<String, int> intData = jsonData.map((key, value) =>
           MapEntry(key, value is int ? value : int.parse(value.toString())));
@@ -64,8 +67,8 @@ class TiktokenDataProcessCenter {
       prefix = '';
     }
     for (int i = 1; i <= 6; i++) {
-      String jsonString =
-          await rootBundle.loadString('${prefix}lib/tokens/p50k_base/p50k_base_$i.json');
+      String jsonString = await rootBundle
+          .loadString('${prefix}lib/tokens/p50k_base/p50k_base_$i.json');
       Map<String, dynamic> jsonData = json.decode(jsonString);
       Map<String, int> intData = jsonData.map((key, value) =>
           MapEntry(key, value is int ? value : int.parse(value.toString())));
@@ -73,14 +76,14 @@ class TiktokenDataProcessCenter {
     }
   }
 
-   Future<void> initR50kBaseData({bool ignorePackageName = false}) async {
+  Future<void> initR50kBaseData({bool ignorePackageName = false}) async {
     var prefix = 'packages/flutter_tiktoken/';
     if (ignorePackageName == true) {
       prefix = '';
     }
     for (int i = 1; i <= 6; i++) {
-      String jsonString =
-          await rootBundle.loadString('${prefix}lib/tokens/r50k_base/r50k_base_$i.json');
+      String jsonString = await rootBundle
+          .loadString('${prefix}lib/tokens/r50k_base/r50k_base_$i.json');
       Map<String, dynamic> jsonData = json.decode(jsonString);
       Map<String, int> intData = jsonData.map((key, value) =>
           MapEntry(key, value is int ? value : int.parse(value.toString())));
